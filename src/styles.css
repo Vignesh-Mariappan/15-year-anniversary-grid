@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: oklch(0.218216 0.081948 287.836);
+}
+
+.wishes-text {
+  width: 0;
+  font-size: 2rem;
+  height: 0;
+  border-radius: 50%;
+  color: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Arizonia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
+  color: oklch(0.722105 0.159514 342.009);
+}
+
+@keyframes showText {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    width: 400px;
+    height: 425px;
+    border-radius: 0;
+  }
+}
+
+.grid-container {
+  /* min-width: 400px; */
+  max-width: 450px;
+  width: 50%;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  /* background: url("https://images.unsplash.com/photo-1621768216002-5ac171876625?q=80&w=3274&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid-item {
+  border-radius: 4px;
+  background: oklch(0.977882 0.00418 56.3756);
+  /* animation: hideGridItemsAnim 2s ease-in forwards; */
+}
+
+.animate {
+  animation: hideGridItemsAnim 2s ease-in forwards;
+}
+
+@keyframes hideGridItemsAnim {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes shrinkGridContainer {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .grid-container {
+    width: 90%;
+    max-width: 400px;
+  }
+}
